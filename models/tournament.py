@@ -1,16 +1,23 @@
 from datetime import datetime
 import random
+import uuid
 
-from oc_p4.models.round import Round
-from oc_p4.models.tournament_players import TournamentPlayer
+from models.round import Round
+from models.tournament_players import TournamentPlayer
+
+WIN_POINT = 1
+LOOSE_POINT = 0
+DRAW_POINT = 0.5
 
 
 class Tournament:
-    def __init__(self, name, location, description, nb_rounds=4, nb_players=8):
+    def __init__(self, name, location, description, nb_rounds=4, nb_players=8, id=None):
         self.name = name
         self.location = location
         self.description = description
+        self.id = uuid.uuid4() if id is None else id
         self.nb_rounds = nb_rounds
+        self.nb_players = nb_players
         self.rounds = []
         self.tournament_players = []
         self.start_date = datetime.now()
@@ -50,6 +57,29 @@ class Tournament:
         for pair in pairs:
             self.rounds[-1].add_match(pair[0], pair[1])
 
+    def set_result(self, match, result):
+        index_match = match - 1
+        player1 = self.rounds[-1].matches[index_match][0][0]
+        player2 = self.rounds[-1].matches[index_match][1][0]
+        player1.opponents.append(player2.player.id)
+        player2.opponents.append(player1.player.id)
+
+        if result == "1":
+            self.rounds[-1].matches[index_match][0][1] =WIN_POINT
+            self.rounds[-1].matches[index_match][1][1] = LOOSE_POINT
+            print(player1.score)
+            player1.score += WIN_POINT
+        if result == "2":
+            self.rounds[-1].matches[index_match][0][1] = LOOSE_POINT
+            self.rounds[-1].matches[index_match][1][1] = WIN_POINT
+            player2.score += WIN_POINT
+        if result == "3":
+            self.rounds[-1].matches[index_match][0][1] = DRAW_POINT
+            self.rounds[-1].matches[index_match][1][1] = DRAW_POINT
+            player1.score += DRAW_POINT
+            player2.score += DRAW_POINT
+
+
     def change_pair(self, pairs, blocked_player, sorted_players):
         for i,[player1, player2] in enumerate(pairs):
             if player2 and blocked_player not in player1.opponents:
@@ -64,6 +94,12 @@ class Tournament:
 
     def sorted_players_by_score(self):
         return sorted(self.tournament_players, key=lambda x: x.score, reverse=True)
+    
+    def end_round(self):
+        self.rounds[-1].end_date = datetime.now()
+    
+    def end_tournament(self):
+        self.end_date = datetime.now()
 
     def __str__(self):
         return f"{self.name} - {self.location} - {self.date} - {self.rounds} rounds"

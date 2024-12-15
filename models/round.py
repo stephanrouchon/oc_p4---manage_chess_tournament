@@ -12,6 +12,9 @@ class Round:
 
         match =([player1, player1_score],[player2, player2_score])
         self.matches.append(match)
+
+    def end_round(self):
+        self.end_date = datetime.now()
     
     def __str__(self):
         return f"{self.name} - {self.start_date}"
@@ -20,8 +23,8 @@ class Round:
         return {
             "number": self.number,
             "matches": self.matches,
-            "start_date": self.start_date,
-            "end_date": self.end_date,
+            "start_date": self.start_date.strftime("%Y-%m-%d %H:%M:%S"),
+            "end_date": self.end_date.strftime("%Y-%m-%d %H:%M:%S") if self.end_date else None,
         }
     
 
