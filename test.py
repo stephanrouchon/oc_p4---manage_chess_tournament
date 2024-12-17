@@ -13,7 +13,7 @@ def fake_player(nombre, tournament):
         fake_birthday = fake.date_of_birth(minimum_age=18, maximum_age=80)
         fake_id = fake.random_int(min=1, max=1000)
         player = Player(fake_name, fake_last_name, fake_birthday, fake_id)
-        tournament.add_player(player)
+        tournament.add_player_in_tournament(player)
 
 
 tournament = Tournament("Tournoi de test", "2021-12-12", "2021-12-13", "Lyon")

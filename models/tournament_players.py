@@ -6,9 +6,13 @@ class TournamentPlayer:
 
     def __to_dict__(self):
         return {
-            "player": self.player.id,
+            "first_name": self.player.first_name,
+            "last_name": self.player.last_name,
+            "birth_date": self.player.birthday,
+            "id": self.player.id,
             "score": self.score,
             "opponents": self.opponents
         }
+
     def __str__(self):
         return f"{self.player} - {self.score} - {self.opponents}"
