@@ -1,6 +1,10 @@
+from tabulate import tabulate
+
+
 class MenuTournamentView:
-    def display_tournament_menu(self, tournament_name):
-        print(f"\n===== TOURNAMENT MENU =====\nTournament: {tournament_name}")
+    def display_tournament_menu(self, tournament):
+        print(f"\n===== TOURNAMENT MENU =====\nTournament: {tournament.name}\
+              at {tournament.location} {tournament.start_date}")
         print("1. Start or resume tournament")
         print("2. Show tournament players")
         print("3. Show tournament ranking")
@@ -8,7 +12,7 @@ class MenuTournamentView:
         print("5. Back to main menu")
 
         choice = input("Enter your choice: ")
-        while choice not in ["1", "2", "3", "4","5"]:
+        while choice not in ["1", "2", "3", "4", "5"]:
             print("This choice is not valid")
             choice = input("Enter your choice: ")
         return choice
@@ -77,10 +81,11 @@ class MenuTournamentView:
         for round in tournament.rounds:
             print(f"\n===== {round} =====")
             for match in round.matches:
-                if match[0][1] == None:
+                if match[0][1] is None:
                     print(f"{match[0][0].player.name} vs {match[1][0].player.name} : en cours")
-                          
-                else: print(f"{match[0][0].player.name} vs {match[1][0].player.name} {match[0][1]} - {match[1][1]} ")           
+
+                else:
+                    print(f"{match[0][0].player.name} vs {match[1][0].player.name} {match[0][1]} - {match[1][1]} ")
 
     def show_tournament_players(self, players):
         print("\n===== PLAYERS LIST =====")
@@ -141,6 +146,19 @@ class TournamentListView:
                 "Do you want to create a new tournament or search an existing one ? (c/s) ")
         return choice
 
+
 class TournamentChoiceView:
     def find_by_name(self):
         return input("Enter the name of the tournament to find: ")
+
+    def display_tournament(self, tournaments):
+        print("\n===== TOURNAMENTS LIST =====")
+
+        headers = ["n°", "Name", "Location", "Start Date", "End Date"]
+        tournaments = [(i+1, tournament["name"],
+                        tournament["location"],
+                        tournament["start_date"],
+                        tournament["end_date"])
+                       for i, tournament in enumerate(tournaments)]
+
+        print(tabulate(tournaments, headers=headers, tablefmt="grid"))

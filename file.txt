@@ -1,0 +1,22 @@
+ #def show_tournaments(self):
+    #    tournaments_list = self.search_tournament_by_name()
+
+    #    if tournaments_list == []:
+            choice = TournamentListView.not_found(self)
+
+            if choice == "c" or choice == "C":
+                self.tournament.create_tournament()
+                MenuTournamentController(self.tournament).tournament_menu()
+            if choice == "s" or choice == "S":
+                self.display_tournaments()
+            else:
+                self.view.invalid_choice()
+            return
+
+        else:
+            view.display("===== TOURNAMENTS =====")
+            for tournament in tournaments_list:
+                index = tournaments_list.index(tournament) + 1
+                tournament_info = f"{index} - {tournament.name} {tournament.location}"
+            MenuTournamentView.display_tournament_menu(self, tournament_info)
+            self.load_tournaments()

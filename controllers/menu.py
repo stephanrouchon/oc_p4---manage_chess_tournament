@@ -24,41 +24,20 @@ class MenuController():
                 tournament = self.choose_tournament()
 
             elif choice == "3":
-                MenuTournamentReportsController.tournament_reports_menu()
-                return self.tournament
+                self.players_list()
+                
             elif choice == "4":
-                view.display("Goodbye!")
+                self.tournaments_list()
+                
+            elif choice == "5":
+                self.view.goodbye()
                 break
-
             else:
-                view.display_error("Invalid choice")
+                self.view.invalid_choice()
 
     def create_tournament(self):
         tournament = MenuTournamentController().create_tournament()
         return tournament
-
-    def show_tournaments(self):
-        tournaments_list = self.search_tournament_by_name()
-
-        if tournaments_list == []:
-            choice = TournamentListView.not_found(self)
-
-            if choice == "c" or choice == "C":
-                self.tournament.create_tournament()
-                MenuTournamentController(self.tournament).tournament_menu()
-            if choice == "s" or choice == "S":
-                self.display_tournaments()
-            else:
-                view.display_error("Invalid choice")
-            return
-
-        else:
-            view.display("===== TOURNAMENTS =====")
-            for tournament in tournaments_list:
-                index = tournaments_list.index(tournament) + 1
-                tournament_info = f"{index} - {tournament.name} {tournament.location}"
-            MenuTournamentView.display_tournament_menu(self, tournament_info)
-            self.load_tournaments()
 
     def load_tournaments(self):
         with open(".\\data\\tournaments.json", "r", encoding="utf-8") as file:
@@ -134,42 +113,19 @@ class MenuController():
         tournaments_list = [tournament for tournament in tournaments
                             if tournament.name.lower().startswith(choice.lower())]
         return tournaments_list
-
-
-class MenuTournamentReportsController():
-    def __init__(self, view):
-        self.view = view
-
-    def tournament_reports_menu(self):
-        while True:
-            choice = self.view.display_tournament_reports_menu()
-            if choice == "1":
-                self.players_list()
-            elif choice == "2":
-                self.tournaments_results()
-            elif choice == "3":
-                break
-            else:
-                self.view.display_error("Invalid choice")
-
+    
     def players_list(self):
-        pass
+        with open("./data/players.json", "r", encoding="utf-8") as file:
+                players_data = json.load(file)
 
-    def tournaments_results(self):
-        pass
+        players_data.sort(key=lambda x: x["last_name"])
+        
+        self.view.players_list(players_data)
 
+    def tournaments_list(self):
+        tournaments = self.load_tournaments()
 
-class MenuLoadTournamentController():
-    def __init__(self, view):
-        self.view = view
-
-    def load_tournament(self):
-        pass
-
-
-class MenuPlayersController():
-    def __init__(self, view):
-        self.view = view
-
-    def players_list(self):
-        pass
+        tournaments.sort(key=lambda x: x["name"])
+        
+        self.view.tournaments_list(tournaments)
+        

@@ -75,3 +75,5 @@ for match in tournament.rounds[1].matches:
 for player in tournament.tournament_players:
    
     print(f"{player.player.name} - {player.score} - {player.opponents}")
+
+

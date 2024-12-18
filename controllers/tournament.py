@@ -21,7 +21,7 @@ class MenuTournamentController:
     def tournament_menu(self):
         self.view = MenuTournamentView()
         while True:
-            choice = self.view.display_tournament_menu(self.tournament.name)
+            choice = self.view.display_tournament_menu(self.tournament)
             if choice == "1":
                 self.start_or_resume_tournament()
             elif choice == "2":
@@ -85,7 +85,7 @@ class MenuTournamentController:
         return len(self.tournament.tournament_players)
 
     def show_players(self):
-
+        self.order_tournament_players_by_name(self.tournament.tournament_players)
         MenuTournamentView.show_tournament_players(self, self.tournament.tournament_players)
 
     def start_tournament(self):
@@ -99,7 +99,7 @@ class MenuTournamentController:
         if self.tournament.end_date is not None:
             self.view.tournament_end()
             return
-        
+
         if self.tournament.rounds == []:
             self.start_tournament()
         else:
@@ -177,8 +177,8 @@ class MenuTournamentController:
             self.set_match_result()
 
     def show_matches(self):
-        
-            MenuTournamentView.show_rounds(self, self.tournament)
+
+        MenuTournamentView.show_rounds(self, self.tournament)
 
     def show_round_matches(self):
         i = 1
@@ -197,7 +197,6 @@ class MenuTournamentController:
             i += 1
         MenuTournamentView.view_rounds_matches(self, matches_to_display, self.tournament.rounds[-1].name)
 
-    
     def end_tournament(self):
         self.tournament.end_tournament()
         self.view.tournament_end()
