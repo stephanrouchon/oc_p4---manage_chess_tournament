@@ -528,5 +528,269 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "the special One",
+        "location": "London",
+        "description": "",
+        "nb_rounds": 4,
+        "nb_players": 8,
+        "start_date": "2024-12-19T16:58:16.374298",
+        "end_date": "2024-12-19T17:01:58.918906",
+        "id": "893be3a5-e80c-465d-9a93-de993f8cc541",
+        "players": [
+            {
+                "first_name": "Tracy",
+                "last_name": "Mills",
+                "birth_date": "2002-02-17",
+                "id": "MX91555",
+                "score": 3,
+                "opponents": [
+                    "VD14757",
+                    "VD14757",
+                    "FD96055",
+                    "DY40601",
+                    "PH92914"
+                ]
+            },
+            {
+                "first_name": "Misty",
+                "last_name": "Howard",
+                "birth_date": "2014-04-27",
+                "id": "PH92914",
+                "score": 3,
+                "opponents": [
+                    "FZ54317",
+                    "DY40601",
+                    "FD96055",
+                    "MX91555"
+                ]
+            },
+            {
+                "first_name": "Mark",
+                "last_name": "Ayers",
+                "birth_date": "2013-10-17",
+                "id": "DY40601",
+                "score": 3,
+                "opponents": [
+                    "SH36934",
+                    "PH92914",
+                    "MX91555",
+                    "FD96055"
+                ]
+            },
+            {
+                "first_name": "Angela",
+                "last_name": "Lozano",
+                "birth_date": "2021-03-08",
+                "id": "SH36934",
+                "score": 2.5,
+                "opponents": [
+                    "DY40601",
+                    "VD14757",
+                    "RY64959",
+                    "FZ54317"
+                ]
+            },
+            {
+                "first_name": "Barbara",
+                "last_name": "Rodriguez",
+                "birth_date": "2009-09-14",
+                "id": "FZ54317",
+                "score": 2.5,
+                "opponents": [
+                    "PH92914",
+                    "RY64959",
+                    "VD14757",
+                    "SH36934"
+                ]
+            },
+            {
+                "first_name": "Richard",
+                "last_name": "Thompson",
+                "birth_date": "1972-05-15",
+                "id": "VD14757",
+                "score": 1.5,
+                "opponents": [
+                    "MX91555",
+                    "MX91555",
+                    "SH36934",
+                    "FZ54317",
+                    "RY64959"
+                ]
+            },
+            {
+                "first_name": "Joseph",
+                "last_name": "Dunlap",
+                "birth_date": "1981-02-09",
+                "id": "FD96055",
+                "score": 1,
+                "opponents": [
+                    "RY64959",
+                    "MX91555",
+                    "PH92914",
+                    "DY40601"
+                ]
+            },
+            {
+                "first_name": "Elijah",
+                "last_name": "Porter",
+                "birth_date": "2013-03-31",
+                "id": "RY64959",
+                "score": 0.5,
+                "opponents": [
+                    "FD96055",
+                    "FZ54317",
+                    "SH36934",
+                    "VD14757"
+                ]
+            }
+        ],
+        "rounds": [
+            {
+                "number": 1,
+                "name": "Round 1",
+                "start_date": "2024-12-19T16:59:34.558049",
+                "end_date": "2024-12-19T16:59:50.622608",
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "VD14757",
+                        "player2": "MX91555",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 2,
+                        "player1": "PH92914",
+                        "player2": "FZ54317",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 3,
+                        "player1": "DY40601",
+                        "player2": "SH36934",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 4,
+                        "player1": "FD96055",
+                        "player2": "RY64959",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "name": "Round 2",
+                "start_date": "2024-12-19T16:59:50.623702",
+                "end_date": "2024-12-19T17:00:18.204065",
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "FD96055",
+                        "player2": "MX91555",
+                        "player1_score": 0,
+                        "player2_score": 1
+                    },
+                    {
+                        "match": 2,
+                        "player1": "DY40601",
+                        "player2": "PH92914",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 3,
+                        "player1": "VD14757",
+                        "player2": "SH36934",
+                        "player1_score": 0,
+                        "player2_score": 1
+                    },
+                    {
+                        "match": 4,
+                        "player1": "FZ54317",
+                        "player2": "RY64959",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "name": "Round 3",
+                "start_date": "2024-12-19T17:00:18.205518",
+                "end_date": "2024-12-19T17:01:37.036809",
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "DY40601",
+                        "player2": "MX91555",
+                        "player1_score": 0,
+                        "player2_score": 1
+                    },
+                    {
+                        "match": 2,
+                        "player1": "FZ54317",
+                        "player2": "VD14757",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 3,
+                        "player1": "PH92914",
+                        "player2": "FD96055",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 4,
+                        "player1": "SH36934",
+                        "player2": "RY64959",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    }
+                ]
+            },
+            {
+                "number": 4,
+                "name": "Round 4",
+                "start_date": "2024-12-19T17:01:37.037467",
+                "end_date": "2024-12-19T17:01:58.917623",
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "MX91555",
+                        "player2": "PH92914",
+                        "player1_score": 0,
+                        "player2_score": 1
+                    },
+                    {
+                        "match": 2,
+                        "player1": "SH36934",
+                        "player2": "FZ54317",
+                        "player1_score": 0.5,
+                        "player2_score": 0.5
+                    },
+                    {
+                        "match": 3,
+                        "player1": "DY40601",
+                        "player2": "FD96055",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 4,
+                        "player1": "VD14757",
+                        "player2": "RY64959",
+                        "player1_score": 0.5,
+                        "player2_score": 0.5
+                    }
+                ]
+            }
+        ]
     }
 ]

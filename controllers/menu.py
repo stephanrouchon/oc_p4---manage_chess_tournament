@@ -3,10 +3,10 @@ import json
 from controllers.tournament import MenuTournamentController
 from models.player import Player
 from models.tournament import Tournament
-from views import view
+
 
 from views.main_menu_view import MainMenuView
-from views.menu_tournament_view import MenuTournamentView, TournamentChoiceView, TournamentListView
+from views.menu_tournament_view import TournamentChoiceView
 
 
 class MenuController():
@@ -22,13 +22,10 @@ class MenuController():
 
             elif choice == "2":
                 tournament = self.choose_tournament()
-
             elif choice == "3":
                 self.players_list()
-                
             elif choice == "4":
                 self.tournaments_list()
-                
             elif choice == "5":
                 self.view.goodbye()
                 break
@@ -113,19 +110,15 @@ class MenuController():
         tournaments_list = [tournament for tournament in tournaments
                             if tournament.name.lower().startswith(choice.lower())]
         return tournaments_list
-    
+
     def players_list(self):
         with open("./data/players.json", "r", encoding="utf-8") as file:
-                players_data = json.load(file)
-
+            players_data = json.load(file)
         players_data.sort(key=lambda x: x["last_name"])
-        
+
         self.view.players_list(players_data)
 
     def tournaments_list(self):
         tournaments = self.load_tournaments()
-
         tournaments.sort(key=lambda x: x["name"])
-        
         self.view.tournaments_list(tournaments)
-        

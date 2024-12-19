@@ -61,6 +61,6 @@ class MainMenuView:
     def goodbye(self):
         print("Goodbye!")
         return
-    
+
     def invalid_choice(self):
         print("This choice is not valid")
