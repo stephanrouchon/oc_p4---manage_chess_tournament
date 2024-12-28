@@ -11,6 +11,8 @@ DRAW_POINT = 0.5
 
 
 class Tournament:
+    """create tournament
+    """
     def __init__(self, name, location, description, nb_rounds=4, nb_players=8, id=None):
         self.name = name
         self.location = location
@@ -24,6 +26,15 @@ class Tournament:
         self.end_date = None
 
     def add_player_in_tournament(self, player):
+        """add player in tournament
+
+        Args:
+            player (_type_): object
+
+        Returns:
+            _type_: object
+        """
+
         tournament_player = TournamentPlayer(player)
         self.tournament_players.append(tournament_player)
         return tournament_player

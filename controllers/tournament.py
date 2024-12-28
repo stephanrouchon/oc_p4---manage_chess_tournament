@@ -98,7 +98,6 @@ class MenuTournamentController:
     def start_or_resume_tournament(self):
         if self.tournament.end_date is not None:
             self.view.tournament_end()
-            return
 
         if self.tournament.rounds == []:
             self.start_tournament()
@@ -111,7 +110,7 @@ class MenuTournamentController:
             self.end_tournament()
             self.view.tournament_end()
             self.update_tournament()
-            return
+
         else:
             self.tournament.add_round()
             self.tournament.toss()
@@ -137,7 +136,7 @@ class MenuTournamentController:
     def set_rounds_results(self, match):
 
         if match == "B" or match == "b":
-            return
+            return False
 
         elif match.isdigit() and int(match) <= len(self.tournament.rounds[-1].matches):
             match = int(match)

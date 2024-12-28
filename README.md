@@ -38,7 +38,7 @@ d. Installer les packages
 afin de verifier le respect du formatage du code vous pouvez generer un rapport flake8 
 à l'aide de la commande suivante
 
-`flake8.py`
+`python flake8.py`
 
 le rapport est généré dans le dossier flake report :
 le rapport est le fichier : index.html

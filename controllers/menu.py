@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 
 from controllers.tournament import MenuTournamentController
@@ -5,6 +6,7 @@ from models.player import Player
 from models.tournament import Tournament
 
 
+from views.add_player_view import AddPlayerView, CreatePlayerView
 from views.main_menu_view import MainMenuView
 from views.menu_tournament_view import TournamentChoiceView
 
@@ -63,15 +65,21 @@ class MenuController():
                                      tournament["nb_players"],
                                      tournament["id"]
                                      )
-        self.tournament.start_date = tournament["start_date"]
-        self.tournament.end_date = tournament["end_date"]
+        self.tournament.start_date = datetime.fromisoformat(tournament["start_date"])
+        if tournament["end_date"] is None:
+            self.tournament.end_date = None
+        else:
+            self.tournament.end_date = datetime.fromisoformat(tournament["end_date"])
         return self.tournament
 
     def load_rounds(self, tournament):
         for round in tournament["rounds"]:
             self.tournament.add_round()
-            self.tournament.rounds[-1].start_date = round["start_date"]
-            self.tournament.rounds[-1].end_date = round["end_date"]
+            self.tournament.rounds[-1].start_date = datetime.fromisoformat(round["start_date"])
+            if round["end_date"] is None:
+                self.tournament = None
+            else:
+                self.tournament.rounds[-1].end_date = datetime.fromisoformat(round["end_date"])
 
             for match in round["matches"]:
 
@@ -117,6 +125,15 @@ class MenuController():
         players_data.sort(key=lambda x: x["last_name"])
 
         self.view.players_list(players_data)
+
+    def create_player(self):
+        first_name = CreatePlayerView().get_first_name()
+        last_name = CreatePlayerView().get_last_name()
+        birth_date = CreatePlayerView().get_birth_date()
+        id = CreatePlayerView().get_id()
+        new_player = Player(first_name, last_name, birth_date, id)
+        self.save_player(new_player)
+        AddPlayerView.player_created(self, new_player.name)
 
     def tournaments_list(self):
         tournaments = self.load_tournaments()

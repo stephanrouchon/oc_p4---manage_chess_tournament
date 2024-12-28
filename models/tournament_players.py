@@ -1,4 +1,5 @@
 class TournamentPlayer:
+
     def __init__(self, player, score=0,  opponents=None):
         self.player = player
         self.score = score
