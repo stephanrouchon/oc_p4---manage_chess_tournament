@@ -9,7 +9,7 @@ class TournamentPlayer:
         return {
             "first_name": self.player.first_name,
             "last_name": self.player.last_name,
-            "birth_date": self.player.birthday,
+            "birthdate": self.player.birthday,
             "id": self.player.id,
             "score": self.score,
             "opponents": self.opponents

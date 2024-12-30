@@ -13,6 +13,6 @@ class Player:
         return {
             "first_name": self.first_name,
             "last_name": self.last_name,
-            "birthday": self.birthday,
+            "birthdate": self.birthday,
             "id": self.id
         }

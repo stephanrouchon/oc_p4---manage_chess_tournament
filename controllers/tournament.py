@@ -242,12 +242,11 @@ class MenuTournamentController:
     def create_player(self):
         first_name = CreatePlayerView().get_first_name()
         last_name = CreatePlayerView().get_last_name()
-        birth_date = CreatePlayerView().get_birth_date()
+        birthday = CreatePlayerView().get_birth_date()
         id = CreatePlayerView().get_id()
-        new_player = Player(first_name, last_name, birth_date, id)
+        new_player = Player(first_name, last_name, birthday, id)
         self.save_player(new_player)
         self.tournament.add_player_in_tournament(new_player)
-
         AddPlayerView.player_created(self, new_player.name)
 
     def save_player(self, new_player):

@@ -104,7 +104,7 @@ class MenuController():
             player_opponents = player["opponents"]
             player = Player(player["first_name"],
                             player["last_name"],
-                            player["birth_date"],
+                            player["birthdate"],
                             player["id"]
                             )
 
