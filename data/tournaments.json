@@ -1,4 +1,14 @@
 [
-
+    {
+        "name": "Championnat de France",
+        "location": "Paris",
+        "description": "reservés aux 8 meilleurs joueurs",
+        "nb_rounds": 4,
+        "nb_players": 8,
+        "start_date": "2024-12-30T08:27:52.790014",
+        "end_date": null,
+        "id": "6ce41305-f9d7-4564-8c80-3e4953e3e2b5",
+        "players": [],
+        "rounds": []
+    }
 ]
-    

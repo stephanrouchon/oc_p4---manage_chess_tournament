@@ -233,10 +233,10 @@ class MenuTournamentController:
             player = players_list[choice]
             self.add_player(player)
         elif choice.isdigit() and int(choice)-1 > len(players_list):
-            display_error("Invalid choice")
+            MenuTournamentView.invalid_choice
             self.display_players()
         else:
-            display_error("Invalid choice")
+            MenuTournamentView.invalid_choice
             self.display_players()
 
     def create_player(self):
