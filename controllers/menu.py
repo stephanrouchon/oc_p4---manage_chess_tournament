@@ -48,7 +48,6 @@ class MenuController():
         choice = MainMenuView.choose_tournament(self, tournaments_data)
         tournament = tournaments_data[int(choice) - 1]
         self.load_tournament(tournament)
-        
 
     def load_tournament(self, tournament):
 
