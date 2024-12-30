@@ -1,2 +1,212 @@
 [
+    {
+        "name": "Championnat de France",
+        "location": "Paris",
+        "description": "",
+        "nb_rounds": 4,
+        "nb_players": 8,
+        "start_date": "2024-12-30T14:53:11.224791",
+        "end_date": null,
+        "id": "945bed4a-daf5-4903-aa0f-14d8d97f37c5",
+        "players": [
+            {
+                "first_name": "Pignon",
+                "last_name": "Francois",
+                "birthdate": "04/12/1966",
+                "id": "rs24552",
+                "score": 0,
+                "opponents": [
+                    "JY14154",
+                    "WP99796"
+                ]
+            },
+            {
+                "first_name": "Brian",
+                "last_name": "Wheeler",
+                "birthdate": "1993-09-19",
+                "id": "GL95273",
+                "score": 0.5,
+                "opponents": [
+                    "FD96055",
+                    "QM38190"
+                ]
+            },
+            {
+                "first_name": "Brandy",
+                "last_name": "Hill",
+                "birthdate": "1996-09-11",
+                "id": "XU04672",
+                "score": 0.5,
+                "opponents": [
+                    "WP99796",
+                    "JY14154"
+                ]
+            },
+            {
+                "first_name": "Jose",
+                "last_name": "Hernandez",
+                "birthdate": "1984-04-03",
+                "id": "WP99796",
+                "score": 1.5,
+                "opponents": [
+                    "XU04672",
+                    "rs24552"
+                ]
+            },
+            {
+                "first_name": "Joseph",
+                "last_name": "Dunlap",
+                "birthdate": "1981-02-09",
+                "id": "FD96055",
+                "score": 1.5,
+                "opponents": [
+                    "GL95273",
+                    "WZ22956"
+                ]
+            },
+            {
+                "first_name": "Jessica",
+                "last_name": "Wright",
+                "birthdate": "1981-07-26",
+                "id": "JY14154",
+                "score": 2,
+                "opponents": [
+                    "rs24552",
+                    "XU04672"
+                ]
+            },
+            {
+                "first_name": "David",
+                "last_name": "Bryant",
+                "birthdate": "1998-02-02",
+                "id": "QM38190",
+                "score": 0.5,
+                "opponents": [
+                    "WZ22956",
+                    "GL95273"
+                ]
+            },
+            {
+                "first_name": "Jeremy",
+                "last_name": "White",
+                "birthdate": "1991-06-14",
+                "id": "WZ22956",
+                "score": 1.5,
+                "opponents": [
+                    "QM38190",
+                    "FD96055"
+                ]
+            }
+        ],
+        "rounds": [
+            {
+                "number": 1,
+                "name": "Round 1",
+                "start_date": "2024-12-30T15:18:17.572410",
+                "end_date": "2024-12-30T15:19:01.006984",
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "JY14154",
+                        "player2": "rs24552",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 2,
+                        "player1": "WP99796",
+                        "player2": "XU04672",
+                        "player1_score": 0.5,
+                        "player2_score": 0.5
+                    },
+                    {
+                        "match": 3,
+                        "player1": "QM38190",
+                        "player2": "WZ22956",
+                        "player1_score": 0,
+                        "player2_score": 1
+                    },
+                    {
+                        "match": 4,
+                        "player1": "GL95273",
+                        "player2": "FD96055",
+                        "player1_score": 0,
+                        "player2_score": 1
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "name": "Round 2",
+                "start_date": "2024-12-30T15:19:01.007932",
+                "end_date": "2024-12-30T15:20:19.386841",
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "WZ22956",
+                        "player2": "FD96055",
+                        "player1_score": 0.5,
+                        "player2_score": 0.5
+                    },
+                    {
+                        "match": 2,
+                        "player1": "JY14154",
+                        "player2": "XU04672",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 3,
+                        "player1": "WP99796",
+                        "player2": "rs24552",
+                        "player1_score": 1,
+                        "player2_score": 0
+                    },
+                    {
+                        "match": 4,
+                        "player1": "QM38190",
+                        "player2": "GL95273",
+                        "player1_score": 0.5,
+                        "player2_score": 0.5
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "name": "Round 3",
+                "start_date": "2024-12-30T15:20:19.387410",
+                "end_date": null,
+                "matches": [
+                    {
+                        "match": 1,
+                        "player1": "JY14154",
+                        "player2": "WP99796",
+                        "player1_score": null,
+                        "player2_score": null
+                    },
+                    {
+                        "match": 2,
+                        "player1": "FD96055",
+                        "player2": "WZ22956",
+                        "player1_score": null,
+                        "player2_score": null
+                    },
+                    {
+                        "match": 3,
+                        "player1": "GL95273",
+                        "player2": "XU04672",
+                        "player1_score": null,
+                        "player2_score": null
+                    },
+                    {
+                        "match": 4,
+                        "player1": "QM38190",
+                        "player2": "rs24552",
+                        "player1_score": null,
+                        "player2_score": null
+                    }
+                ]
+            }
+        ]
+    }
 ]

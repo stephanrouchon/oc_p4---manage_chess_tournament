@@ -112,10 +112,10 @@ class Tournament:
         self.end_date = datetime.now()
 
     def __str__(self):
-        return f"{self.name} - {self.location} - {self.date} - {self.rounds} rounds"
+        return f"{self.name} - {self.location} - {self.start_date} - {self.rounds} rounds"
 
     def __repr__(self):
-        return f"{self.name} - {self.location} - {self.date} - {self.rounds} rounds"
+        return f"{self.name} - {self.location} - {self.start_date} - {self.rounds} rounds"
 
     def __to_dict__(self):
         return {

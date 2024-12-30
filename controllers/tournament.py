@@ -31,7 +31,7 @@ class MenuTournamentController:
             elif choice == "4":
                 self.show_matches()
             elif choice == "5":
-                return
+                break
             else:
                 view.display_error("Invalid choice")
 

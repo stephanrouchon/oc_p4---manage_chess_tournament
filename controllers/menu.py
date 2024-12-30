@@ -21,7 +21,6 @@ class MenuController():
             if choice == "1":
                 tournament = self.create_tournament()
                 MenuTournamentController(tournament).tournament_menu()
-
             elif choice == "2":
                 tournament = self.choose_tournament()
             elif choice == "3":
@@ -49,6 +48,7 @@ class MenuController():
         choice = MainMenuView.choose_tournament(self, tournaments_data)
         tournament = tournaments_data[int(choice) - 1]
         self.load_tournament(tournament)
+        
 
     def load_tournament(self, tournament):
 
@@ -77,7 +77,7 @@ class MenuController():
             self.tournament.add_round()
             self.tournament.rounds[-1].start_date = datetime.fromisoformat(round["start_date"])
             if round["end_date"] is None:
-                self.tournament = None
+                self.tournament.end_date = None
             else:
                 self.tournament.rounds[-1].end_date = datetime.fromisoformat(round["end_date"])
 
